@@ -34,7 +34,6 @@ void updateLazy(long long idx){
 long long update(long long left, long long right, long long idx, long long tl, long long tr, long long tn){
     if(left >= tl and right <= tr){
         lazy[idx] += tn;
-//        cout << "left : " << left << " right : " << right << " seg[" << idx << "] : " << seg[idx] << " -> " << seg[idx] + ((right - left + 1) * lazy[idx]) << " lazy -> " << lazy[idx] << "\n";
         seg[idx] += ((right - left + 1) * lazy[idx]);
         if(right > left){
             updateLazy(idx);
@@ -58,7 +57,6 @@ long long search(long long left, long long right, long long idx, long long sl, l
         return 0;
     }
     if(left >= sl and right <= sr){
-//        cout << "left : " << left << " right : " << right << " seg[" << idx << "] : " << seg[idx] << " -> " << seg[idx] + ((right - left + 1) * lazy[idx]) << " lazy -> " << lazy[idx] << "\n";
         seg[idx] += ((right - left + 1) * lazy[idx]);
         if(right > left){
             updateLazy(idx);
