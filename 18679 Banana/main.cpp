@@ -2,52 +2,38 @@
 //  main.cpp
 //  18679 Banana
 //
-//  Created by 이준영 on 17/08/2020.
-//  Copyright © 2020 이준영. All rights reserved.
+//  Created by 이준영 on 2021/01/10.
 //
 
 #include <iostream>
+#include <map>
 #include <string>
+
 using namespace std;
-string str[2500];
+
 int N, T;
+map<string, string> mini;
 
 int main(int argc, const char * argv[]) {
-    ios::sync_with_stdio();
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     cin >> N;
     for(int i = 1; i <= N; i++){
-        string a;
-        string b;
-        char equal;
-        cin >> a;
-        int num = 0;
-        for(int i = 0; i < a.size(); i++){
-            num = num + (int)a[i];
-        }
-        cin >> equal;
-        cin >> b;
-        str[num] = b;
+        string pep, equal, minimi;
+        cin >> pep >> equal >> minimi;
+        mini[pep] = minimi;
     }
     cin >> T;
     for(int i = 1; i <= T; i++){
         int K;
         cin >> K;
-        string print;
+        string str;
         for(int j = 1; j <= K; j++){
-            string a;
-            cin >> a;
-            int num = 0;
-            for(int l = 0; l < a.size(); l++){
-                num = num + (int)a[l];
-            }
-            print = print + str[num];
-            if(j != K){
-                print = print + " ";
-            }
+            cin >> str;
+            cout << mini[str] << " ";
         }
-        cout << print << "\n";
+        cout << "\n";
     }
     return 0;
 }
