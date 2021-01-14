@@ -22,10 +22,6 @@ int dy[] = {-1,0,1,0};
 int dx[] = {0,-1,0,1};
 priority_queue<pair<pair<ld,ld>, pair<int,int> >, vector<pair<pair<ld, ld>, pair<int,int> > >, greater<pair<pair<ld, ld>, pair<int,int> > > > pq;
 
-long double getV(){
-    return 0;
-}
-
 void BFS(){
     while(!pq.empty()){
         int nowX = pq.top().second.second;
