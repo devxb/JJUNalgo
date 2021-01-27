@@ -10,7 +10,7 @@
 #include <map>
 using namespace std;
 char arr[7][7];
-int conn[7][7], cnt = 20, dy[] = {-1, 0, 1, 0}, dx[] = {0, -1, 0, 1}, mainBit = 1 << 26;
+int conn[7][7], cnt = 13, dy[] = {-1, 0, 1, 0}, dx[] = {0, -1, 0, 1}, mainBit = 1 << 26;
 map<int, int> check;
 vector<pair<int,int> > piece;
 
