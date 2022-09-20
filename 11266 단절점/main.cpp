@@ -18,7 +18,7 @@ int findBreakPoints(int befIdx, int idx){
     int diffTree = 0;
     for(int i = 0; i < edges[idx].size(); i++){
         int nextIdx = edges[idx][i];
-        if(befIdx == nextIdx) continue;
+        if(befIdx == nextIdx || visitedOrders[nextIdx] >= visitedOrders[idx]) continue;
         if(visitedOrders[nextIdx] == 0) diffTree++;
         int temp = findBreakPoints(idx, nextIdx);
         if(visitedOrders[idx] <= temp) isBreakPoint[idx] = true;
@@ -57,6 +57,6 @@ int main() {
         resultCount++;
         resultNodes.append(to_string(i)).append(" ");
     }
-    cout << resultCount << "\n" << resultNodes << "\n"; 
+    cout << resultCount << "\n" << resultNodes << "\n";
     return 0;
 }
